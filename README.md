@@ -45,7 +45,6 @@ public float Saludar(string NombrePersona) {
 }
 ```
 
-aca
 ## Agregar el prefijo _ en variables privadas de las clases.
 -----
 :heavy_check_mark:
@@ -78,7 +77,6 @@ public float Saludar(string NombrePersona) {
   return saludoCompleto;
 }
 ```
-aca
 
 ## No usar notación Hungara.
 -----
