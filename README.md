@@ -45,6 +45,41 @@ public float Saludar(string NombrePersona) {
 }
 ```
 
+aca
+## Agregar el prefijo _ en variables privadas de las clases.
+-----
+:heavy_check_mark:
+```csharp
+public class CompraService {
+  private readonly IFacturaService _facturaService;
+
+  public CompraService(IFacturaService facturaService) {
+    _facturaService = facturaService;
+  }
+}
+```
+
+:x: (facturaService es una variable privada de la clase "Compra" y no tiene el prefijo _)
+```csharp
+public class CompraService {
+  private readonly IFacturaService facturaService;
+
+  public CompraService(IFacturaService facturaService) {
+    this.facturaService = facturaService;
+  }
+}
+```
+
+:x: (NombrePersona es un argumento del método y está utilizando PascalCase)
+```csharp
+
+public float Saludar(string NombrePersona) {
+  string saludoCompleto = $"¡Hola, {NombrePersona}!"
+  return saludoCompleto;
+}
+```
+aca
+
 ## No usar notación Hungara.
 -----
 La notación Hungarian consiste en prefijos en minúsculas que se añaden a los nombres de las variables y que indican su tipo. El resto del nombre indica, lo más claramente posible, el fin de la variable.
