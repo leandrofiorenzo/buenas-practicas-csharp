@@ -157,22 +157,6 @@ public DateTime fecha_Toma_Pedido;
 public TimeSpan tiempo_Proxima_Alerta;
 ```
 
-## Usar tipos predefinidos en vez de system types (Int16, Single, UInt64).
------
-:heavy_check_mark:
-```csharp
-string primerNombre;
-int ultimoIndice;
-bool esAdulto;
-```
-
-:x:
-```csharp
-String primerNombre;
-Int32 ultimoIndice;
-Boolean esAdulto;
-```
-
 ## Usar el prefijo I para interfaces.
 -----
 :heavy_check_mark:
