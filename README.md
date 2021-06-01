@@ -14,7 +14,7 @@ public class CalculadoraCientifica {
 }
 ```
 
-:x: (calculadoraCientifica es el nombre de clase y está utilizando camelCase)
+:x: (calculadoraCientifica es el nombre de la clase y está utilizando camelCase)
 ```csharp
 public class calculadoraCientifica {
   public float Sumar(float numeroA, float numeroB) {
