@@ -8,11 +8,27 @@
 :heavy_check_mark:
 ```csharp
 public class CalculadoraCientifica {
-
   public float Sumar(float numeroA, float numeroB) {
     return numeroA + numeroB;
   }
+}
+```
 
+:x: (calculadoraCientifica es el nombre de clase y está utilizando camelCase)
+```csharp
+public class calculadoraCientifica {
+  public float Sumar(float numeroA, float numeroB) {
+    return numeroA + numeroB;
+  }
+}
+```
+
+:x: (sumar es un método y está utilizando camelCase)
+```csharp
+public class CalculadoraCientifica {
+  public float sumar(float numeroA, float numeroB) {
+    return numeroA + numeroB;
+  }
 }
 ```
 
