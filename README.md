@@ -85,15 +85,6 @@ public class CompraService {
 }
 ```
 
-:x: (NombrePersona es un argumento del método y está utilizando PascalCase)
-```csharp
-
-public float Saludar(string NombrePersona) {
-  string saludoCompleto = $"¡Hola, {NombrePersona}!"
-  return saludoCompleto;
-}
-```
-
 ## No usar notación Hungara.
 -----
 La notación Hungarian consiste en prefijos en minúsculas que se añaden a los nombres de las variables y que indican su tipo. El resto del nombre indica, lo más claramente posible, el fin de la variable.
