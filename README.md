@@ -85,12 +85,14 @@ public readonly string SHIPPING_TYPE_READONLY = "ShippingTypeReadonly";
 ```csharp
 EmpleadoCategoria empleadoCategoria;
 Asignacion empleadoAsignacion;
+string nombreCliente;
 ```
 
 :x:
 ```csharp
 EmpleadoCategoria empCat;
 Asignacion empAsig;
+string nomCli;
 ```
 
 :wink: ¡Algunas excepciones!
@@ -101,7 +103,7 @@ FtpHelper ftpHelper;
 UriPart uriPart;
 ```
 
-## No usar guiones bajos para nombres de variables.
+## No usar snake case (separ con guión bajo) para nombres de variables.
 -----
 :heavy_check_mark:
 ```csharp
