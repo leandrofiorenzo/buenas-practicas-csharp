@@ -1,33 +1,39 @@
+## Fuente
+Las convenciones de este documento fueron generadas a partir de las "Naming Guidelines" de Microsoft:
+https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/naming-guidelines
+
+## Definiciones
+
 > Existen dos tipos de CamelCase:
-> * UpperCamelCase (más conocido como PascalCase), cuando la primera letra de cada una de las palabras es mayúscula. Ejemplo: CalculadoraCientifica.
-> * lowerCamelCase (o simplemente camelCase), igual que la anterior con la excepción de que la primera letra es minúscula. Ejemplo: calculadoraCientifica.
+> * UpperCamelCase (más conocido como PascalCase), cuando la primera letra de cada una de las palabras es mayúscula. Ejemplo: ScientificCalculator.
+> * lowerCamelCase (o simplemente camelCase), igual que la anterior con la excepción de que la primera letra es minúscula. Ejemplo: scientificCalculator.
 
 ## Usar PascalCase para los nombres de las clases y métodos.
 -----
 
 :heavy_check_mark:
 ```csharp
-public class CalculadoraCientifica {
-  public float Sumar(float numeroA, float numeroB) {
-    return numeroA + numeroB;
+public class ScientificCalculator {
+  public float Sum(float firstNumber, float secondNumber) {
+    return firstNumber + secondNumber;
   }
 }
 ```
 
-:x: (calculadoraCientifica es el nombre de la clase y está utilizando camelCase)
+:x: (scientificCalculator es el nombre de la clase y está utilizando camelCase)
 ```csharp
-public class calculadoraCientifica {
-  public float Sumar(float numeroA, float numeroB) {
-    return numeroA + numeroB;
+public class scientificCalculator {
+  public float Sum(float firstNumber, float secondNumber) {
+    return firstNumber + secondNumber;
   }
 }
 ```
 
-:x: (sumar es un método y está utilizando camelCase)
+:x: (sum es un método y está utilizando camelCase)
 ```csharp
-public class CalculadoraCientifica {
-  public float sumar(float numeroA, float numeroB) {
-    return numeroA + numeroB;
+public class ScientificCalculator {
+  public float sum(float firstNumber, float secondNumber) {
+    return firstNumber + secondNumber;
   }
 }
 ```
@@ -37,27 +43,27 @@ public class CalculadoraCientifica {
 :heavy_check_mark:
 ```csharp
 
-public float Saludar(string nombrePersona) {
-  string saludoCompleto = $"¡Hola, {nombrePersona}!"
-  return saludoCompleto;
+public float SayHello(string personName) {
+  string fullGreet = $"¡Hello, {personName}!"
+  return fullGreet;
 }
 ```
 
-:x: (SaludoCompleto es una variable local y está utilizando PascalCase)
+:x: (FullGreet es una variable local y está utilizando PascalCase)
 ```csharp
 
-public float Saludar(string nombrePersona) {
-  string SaludoCompleto = $"¡Hola, {nombrePersona}!"
-  return SaludoCompleto;
+public float SayHello(string personName) {
+  string FullGreet = $"¡Hello, {personName}!"
+  return FullGreet;
 }
 ```
 
-:x: (NombrePersona es un argumento del método y está utilizando PascalCase)
+:x: (PersonName es un argumento del método y está utilizando PascalCase)
 ```csharp
 
-public float Saludar(string NombrePersona) {
-  string saludoCompleto = $"¡Hola, {NombrePersona}!"
-  return saludoCompleto;
+public float SayHello(string PersonName) {
+  string fullGreet = $"¡Hello, {PersonName}!"
+  return fullGreet;
 }
 ```
 
@@ -65,22 +71,22 @@ public float Saludar(string NombrePersona) {
 -----
 :heavy_check_mark:
 ```csharp
-public class CompraService {
-  private readonly IFacturaService _facturaService;
+public class OrderService {
+  private readonly IInvoiceService _invoiceService;
 
-  public CompraService(IFacturaService facturaService) {
-    _facturaService = facturaService;
+  public OrderService(IInvoiceService invoiceService) {
+    _invoiceService = invoiceService;
   }
 }
 ```
 
-:x: (facturaService es una variable privada de la clase "Compra" y no tiene el prefijo _)
+:x: (invoiceService es una variable privada de la clase "Compra" y no tiene el prefijo _)
 ```csharp
-public class CompraService {
-  private readonly IFacturaService facturaService;
+public class OrderService {
+  private readonly IInvoiceService invoiceService;
 
-  public CompraService(IFacturaService facturaService) {
-    this.facturaService = facturaService;
+  public OrderService(IInvoiceService invoiceService) {
+    this.invoiceService = invoiceService;
   }
 }
 ```
@@ -91,16 +97,16 @@ La notación Hungarian consiste en prefijos en minúsculas que se añaden a los 
 
 :heavy_check_mark:
 ```csharp
-int contador;
-string nombre;
-float sueldo;
+int count;
+string name;
+float salary;
 ```
 
 :x:
 ```csharp
-int iContador;
-string strNombre;
-float fSueldo;
+int iCount;
+string strName;
+float fSalary;
 ```
 
 ## No usar Screaming Caps para variables const o readonly.
@@ -119,20 +125,20 @@ public const string SHIPPING_TYPE_CONST = "ShippingTypeConst";
 public readonly string SHIPPING_TYPE_READONLY = "ShippingTypeReadonly";
 ```
 
-## No usar abreviaturas.
+## No abreviar.
 -----
 :heavy_check_mark:
 ```csharp
-EmpleadoCategoria empleadoCategoria;
-Asignacion empleadoAsignacion;
-string nombreCliente;
+EmployeeCategory employeeCategory;
+EmployeeAssignment employeeAssignment;
+string clientName;
 ```
 
 :x:
 ```csharp
-EmpleadoCategoria empCat;
-Asignacion empAsig;
-string nomCli;
+EmployeeCategory empCat;
+EmployeeAssignment empAssig;
+string cliNam;
 ```
 
 :wink: ¡Algunas excepciones!
@@ -147,34 +153,33 @@ UriPart uriPart;
 -----
 :heavy_check_mark:
 ```csharp
-public DateTime fechaTomaPedido;
-public TimeSpan tiempoProximaAlerta;
+public DateTime orderDate;
 ```
 
 :x:
 ```csharp
-public DateTime fecha_Toma_Pedido;
-public TimeSpan tiempo_Proxima_Alerta;
+public DateTime order_date;
+public DateTime order_Date;
 ```
 
 ## Usar el prefijo I para interfaces.
 -----
 :heavy_check_mark:
 ```csharp
-public interface IPersona;
+public interface IEmployeeService;
 ```
 
 ## Usar el sufijo Service para servicios.
 -----
 :heavy_check_mark:
 ```csharp
-public class PersonaService;
+public class EmployeeService;
 ```
 
 ## Usar el sufijo Repository para repositorios.
 -----
 :heavy_check_mark:
 ```csharp
-public class PersonaRepository;
+public class EmployeeRepository;
 ```
 
