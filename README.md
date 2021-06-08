@@ -80,7 +80,7 @@ public class OrderService {
 }
 ```
 
-:x: (invoiceService es una variable privada de la clase "Compra" y no tiene el prefijo _)
+:x: (invoiceService es una variable privada de la clase "Order" y no tiene el prefijo _)
 ```csharp
 public class OrderService {
   private readonly IInvoiceService invoiceService;
